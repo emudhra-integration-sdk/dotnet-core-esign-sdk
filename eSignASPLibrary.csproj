@@ -1,0 +1,101 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>eSign</RootNamespace>
+    <Company>eMudhra</Company>
+    <Authors>eMudhra</Authors>
+    <Version>2.0.0.17</Version>
+    <Description>A comprehensive .NET SDK for digital signature operations, providing PDF signing capabilities with support for multiple authentication methods and signature appearance customization.</Description>
+    <Copyright>Copyright © 2021-2025 eMudhra</Copyright>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/YOUR_USERNAME/NetStandard_eSignLibKit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/YOUR_USERNAME/NetStandard_eSignLibKit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>esign;digital-signature;pdf;cryptography;authentication;dotnet;netstandard;security</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BouncyCastle_Old\**" />
+    <Compile Remove="eSignLibrary\text_old\**" />
+    <Compile Remove="eSignLibrary_New\**" />
+    <Compile Remove="System_old\**" />
+    <EmbeddedResource Remove="BouncyCastle_Old\**" />
+    <EmbeddedResource Remove="eSignLibrary\text_old\**" />
+    <EmbeddedResource Remove="eSignLibrary_New\**" />
+    <EmbeddedResource Remove="System_old\**" />
+    <None Remove="BouncyCastle_Old\**" />
+    <None Remove="eSignLibrary\text_old\**" />
+    <None Remove="eSignLibrary_New\**" />
+    <None Remove="System_old\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="eSignLibrary\text\error_messages\en.lng" />
+    <None Remove="eSignLibrary\text\error_messages\nl.lng" />
+    <None Remove="eSignLibrary\text\error_messages\pt.lng" />
+    <None Remove="eSignLibrary\text\pdf\fonts\ARIALUNI.TTF" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Courier-Bold.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Courier-BoldOblique.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Courier-Oblique.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Courier.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Helvetica-Bold.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Helvetica-BoldOblique.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Helvetica-Oblique.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Helvetica.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Symbol.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Times-Bold.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Times-BoldItalic.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Times-Italic.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\Times-Roman.afm" />
+    <None Remove="eSignLibrary\text\pdf\fonts\ZapfDingbats.afm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="eSignLibrary\text\error_messages\en.lng" />
+    <EmbeddedResource Include="eSignLibrary\text\error_messages\nl.lng" />
+    <EmbeddedResource Include="eSignLibrary\text\error_messages\pt.lng" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\ARIALUNI.TTF" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Courier-Bold.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Courier-BoldOblique.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Courier-Oblique.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Courier.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Helvetica-Bold.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Helvetica-BoldOblique.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Helvetica-Oblique.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Helvetica.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Symbol.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Times-Bold.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Times-BoldItalic.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Times-Italic.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\Times-Roman.afm" />
+    <EmbeddedResource Include="eSignLibrary\text\pdf\fonts\ZapfDingbats.afm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.7.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <Obfuscate>True</Obfuscate>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyOriginatorKeyFile>sgKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyVersion>2.0.0.17</AssemblyVersion>
+    <FileVersion>2.0.0.17</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS0618;CS3021;CS0672;CS0414;CS0108;CS0612;CS0659;CS0649</NoWarn>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+</Project>
