@@ -28,6 +28,9 @@ bld/
 # IDE files - VS Code
 /.vscode/
 
+# Claude Code
+/.claude/
+
 # NuGet
 *.nupkg
 *.snupkg
